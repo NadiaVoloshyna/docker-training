@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t nadiiavol/docker-training -f Docker.dev .
+
+script:
+  - docker run nadiiavol/docker-training npm tun test -- --coverage
